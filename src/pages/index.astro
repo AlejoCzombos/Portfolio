@@ -1,13 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
+import presentation from '@data/Presentation.ts';
 ---
 
 <Layout
  title="Portfolio de Alejo Czombos - Desarrollador Backend / Full Stack"
  description='Desarrollador Backend / Full Stack con experiencia en Spring Boot, Java, MySQL, PostgreSQL y React'
 >
-	<main>
-		<h1 class="text-3xl text-center font-bold">Alejo Czombos</h1>
-		<a href="https://www.svgrepo.com/collection/solar-bold-duotone-icons/">Iconos Duecolor</a>
+	<main class="flex flex-col gap-20 mt-32 md:max-w-3xl m-auto">
+		<article
+		  class="flex flex-col gap-8 justify-center md:flex-row md:justify-start md:gap-12"
+		>
+      <img 
+        class="size-64 m-auto md:size-32 rounded-full border-4 border-gray-600"
+        src="https://media.licdn.com/dms/image/D4D03AQEuOTiDvAdeMw/profile-displayphoto-shrink_200_200/0/1706145053286?e=1712188800&v=beta&t=RXp9LK6fysGI_rHvTeAcbvnleBkE0eu_2Ntl4-waK88" 
+        alt="Foto de perfil de Alejo Czombos"
+        >
+      <div class="flex flex-col items-center text-center md:items-start md:text-start md:justify-center">
+        <h1 class="text-2xl font-bold mb-2">{presentation.title}</h1>
+        <p>{presentation.description}</p>
+      </div>
+		</article>
 	</main>
 </Layout>
