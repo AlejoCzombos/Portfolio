@@ -6,7 +6,7 @@ interface Props{
 const { name } = Astro.props;
 ---
 
-<header class="flex gap-3 items-center">
+<header class="font-bold text-2xl text-indigo-400 dark:text-gray-100 mb-6 flex items-center gap-3">
     <h2 class="text-2xl font-bold">{name}</h2>
     <slot/>
 </header>
