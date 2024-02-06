@@ -1,8 +1,10 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
 
-import presentation from '@data/Presentation.ts';
-import experience from '@data/Experience.ts';
+import presentation from '@data/presentation.ts';
+import experience from '@data/experience.ts';
+import projects from '@data/projects.ts';
 
 import ArticuleHeader from '@components/ArticuleHeader.astro';
 
@@ -17,9 +19,9 @@ import ProjectIcon from '@icons/ProjectIcon.astro';
 >
 <header class="mx-auto max-w-3xl sticky top-0 z-10 h-16">
 </header>	
-<main class="flex flex-col gap-20 sm:max-w-3xl m-auto p-5">
+<main class="flex flex-col gap-16 sm:max-w-3xl m-auto p-5 container">
 		
-    <article
+    <section
 		  class="flex flex-col justify-center sm:flex-row sm:justify-start sm:gap-5"
 		>
       <img 
@@ -35,26 +37,66 @@ import ProjectIcon from '@icons/ProjectIcon.astro';
           Curriculum
         </a>
       </div>
-		</article>
+		</section>
     <hr class="border-dashed border-1">
-    <article class="flex flex-col gap-3">
+    <section class="flex flex-col">
       <ArticuleHeader name="Experiencia">
         <ExpirenceIcon className="size-9 fill-white"/>
       </ArticuleHeader>
       {experience.map(({ title, company, date_end, date_start, description }) => (
+      <article class="flex flex-col gap-5">
         <div class="flex flex-col gap-1">
-        <h2 class="text-lg text-slate-700 dark:text-slate-200 font-semibold">{title}<span class="mx-2">&#x2022</span>{company}</h2>
-        <p class="text-sm text-slate-400 dark:text-slate-400">{date_start} - {date_end}</p>
-      </div>  
-      <ul class="leading-7 list-disc text-base list-inside text-slate-500 dark:text-gray-300">
-        {description.map((item) => (
-          <li>{item}</li>
-        ))}
-      </ul>
+          <h2 class="text-lg text-slate-700 dark:text-slate-200 font-semibold">{title}<span class="mx-2">&#x2022</span>{company}</h2>
+          <p class="text-sm text-slate-400 dark:text-slate-400">{date_start} - {date_end}</p>
+        </div>  
+        <ul class="leading-7 list-disc text-base list-inside text-slate-500 dark:text-gray-300">
+          {description.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </article>
       ))}
-    </article>
+    </section>
+    <section class="">
     <ArticuleHeader name="Proyectos">
-      <ProjectIcon className="size-9 fill-white"/>
+      <ProjectIcon className="size-9"/>
     </ArticuleHeader>
+    <div class="grid gap-10">
+    {projects.map(({ title, description, image, deploy, code }) => (
+      <article class="grid md:grid-cols-2 gap-4 sm:gap-7 group">
+        <a href={deploy} class="bg-slate-600 rounded-xl relative overflow-hidden block aspect-[5/3]">
+          <img 
+          class="rounded-xl object-left-top
+          absolute right-0 top-0 left-0 bottom-0 box-content w-full h-full object-contain
+          transition-all translate-x-9 translate-y-9 group-hover:translate-x-6 group-hover:translate-y-6 duration-500 ease-in-out
+           z-10"
+          src={image} alt={title}>
+        </a>
+        <div class="flex flex-col gap-2.5 justify-center">
+          <h3 class="font-bold text-3xl text-slate-800 dark:text-white">{title}</h2>
+          <p class="text-slate-600 dark:text-slate-300 text-lg">{description}</p>
+          <div class="flex gap-2 items-center mb-1">
+            <FileIcon/>
+            <FileIcon/>
+            <FileIcon/>
+            <FileIcon/>
+          </div>
+          <div class="flex justify-start gap-3">
+            { deploy && <a href={deploy} class="flex gap-3 group/live hover:gap-6 transition-[gap] items-center text-lg py-2 px-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-lg">
+              Deploy
+              <FileIcon class="text-2xl group-hover/live:rotate-45 transition-transform"/>
+            </a>
+          }
+            <a href={code} class="text-lg px-4 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-lg">
+              Ver código
+              </a>
+          </div>
+        </div>
+      </article>
+      ))}
+      </div>
+      <div class="grid md:grid-cols-2 gap-4 sm:gap-7">
+        </div>
+    </section>
 	</main>
 </Layout>
