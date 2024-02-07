@@ -1,0 +1,20 @@
+---
+import type {Project} from "@data/projects.ts";
+import LinkIcon from "@icons/LinkIcon.astro"
+
+interface Props {
+    project : Project;
+}
+
+const {project} = Astro.props;
+const {title, description, deploy, code} = project;
+---
+
+<a href={deploy ? deploy : code}>
+    <article class="border-2 border-slate-800 dark:border-slate-600 rounded-lg p-5 group relative
+            hover:border-slate-300 dark:hover:border-slate-400 hover:shadow transition-all duration-200 ease-in-out hover:-translate-y-1">
+        <LinkIcon className="absolute top-3 right-3 size-6 scale-0 group-hover:scale-100 transition-all duration-200 ease-out" />
+        <h2 class="text-2xl font-bold text-slate-800 dark:text-white">{title}</h2>
+        <p class="text-slate-600 dark:text-slate-300">{description}</p>
+    </article>
+</a>
