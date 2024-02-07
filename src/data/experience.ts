@@ -1,4 +1,4 @@
-type Experience = {
+export type Experience = {
   title: string;
   company: string;
   date_start: string;
@@ -6,7 +6,7 @@ type Experience = {
   description: string[];
 };
 
-const experience: Experience[] = [
+export const experience: Experience[] = [
   {
     title: "Backend / Full Stack Developer",
     company: "Freelance",
@@ -18,5 +18,3 @@ const experience: Experience[] = [
     ],
   },
 ];
-
-export default experience;

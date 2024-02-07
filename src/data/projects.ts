@@ -1,4 +1,4 @@
-type Project = {
+export type Project = {
   title: string;
   description: string;
   image?: string;
@@ -8,7 +8,7 @@ type Project = {
   isComingSoon?: boolean;
 };
 
-const projects: Project[] = [
+export const projects: Project[] = [
   {
     title: "Task Manager",
     description:
@@ -20,14 +20,13 @@ const projects: Project[] = [
   },
   {
     title: "Educar para Transformar",
-    description:
-      "Sistema integral de gestión de escuelas. Permite gestionar alumnos, docentes, materias, notas, asistencias, y más. Cuenta con autenticación y autorización de usuarios.",
+    description: "Sistema integral de gestión de escuelas.",
     techs: ["Spring Boot", "MySQL", "GdScript", "Godot Engine"],
     code: "/",
   },
 ];
 
-const otherProjects: Project[] = [
+export const otherProjects: Project[] = [
   {
     title: "LUDO Game",
     description:
@@ -44,5 +43,3 @@ const otherProjects: Project[] = [
     deploy: "https://alehoid.itch.io/wizard-crawler",
   },
 ];
-
-export default projects;
