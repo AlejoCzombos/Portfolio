@@ -1,102 +1,58 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import Layout from "@layouts/Layout.astro";
 
-import presentation from '@data/presentation.ts';
-import experience from '@data/experience.ts';
-import projects from '@data/projects.ts';
+import { experience } from "@data/experience.ts";
+import { projects } from "@data/projects.ts";
+import { otherProjects } from "@data/projects.ts";
 
-import ArticuleHeader from '@components/ArticuleHeader.astro';
+import SectionHeader from "@components/SectionHeader.astro";
+import Profile from "@components/Profile.astro";
+import ExperienceArticule from "@components/ExperienceArticule.astro";
+import ProjectCard from "@components/ProjectCard.astro";
+import OtherProjectCard from "@components/OtherProjectCard.astro";
 
-import FileIcon from '@icons/FileIcon.astro';
-import ExpirenceIcon from '@icons/ExpirenceIcon.astro';
-import ProjectIcon from '@icons/ProjectIcon.astro';
+import ExpirenceIcon from "@icons/ExpirenceIcon.astro";
+import ProjectIcon from "@icons/ProjectIcon.astro";
 ---
 
 <Layout
- title="Portfolio de Alejo Czombos - Desarrollador Backend / Full Stack"
- description='Desarrollador Backend / Full Stack con experiencia en Spring Boot, Java, MySQL, PostgreSQL y React'
+  title="Portfolio de Alejo Czombos - Desarrollador Backend / Full Stack"
+  description="Desarrollador Backend / Full Stack con experiencia en Spring Boot, Java, MySQL, PostgreSQL y React"
 >
-<header class="mx-auto max-w-3xl sticky top-0 z-10 h-16">
-</header>	
-<main class="flex flex-col gap-16 sm:max-w-3xl m-auto p-5 container">
-		
+  <header class="mx-auto max-w-3xl sticky top-0 z-10 h-16"></header>
+  <main class="flex flex-col gap-16 sm:max-w-3xl m-auto p-5 container">
     <section
-		  class="flex flex-col justify-center sm:flex-row sm:justify-start sm:gap-5"
-		>
-      <img 
-        class="m-auto sm:m-0 size-44 rounded-full shadow-lg border-[8px] dark:border-gray-900/80 border-gray-900"
-        src="https://media.licdn.com/dms/image/D4D03AQEuOTiDvAdeMw/profile-displayphoto-shrink_200_200/0/1706145053286?e=1712188800&v=beta&t=RXp9LK6fysGI_rHvTeAcbvnleBkE0eu_2Ntl4-waK88" 
-        alt="Foto de perfil de Alejo Czombos"
-        >
-      <div class="flex flex-col items-center text-center sm:items-start sm:text-start sm:justify-center gap-2">
-        <h1 class="text-slate-600 dark:text-slate-100 text-4xl sm-text-xl font-bold">{presentation.title}</h1>
-        <p class="text-balance text-slate-700 dark:text-slate-300 text-lg max-w-xl">{presentation.description}</p>
-        <a href="/" class="flex items-center mt-2 gap-2 px-3 py-2 text-sm font-semibold rounded-xl dark:text-slate-200 text-slate-700 dark:bg-indigo-500 dark:hover:bg-indigo-400/90 bg-indigo-300 hover:bg-indigo-200/90">
-          <FileIcon/>
-          Curriculum
-        </a>
-      </div>
-		</section>
-    <hr class="border-dashed border-1">
+      class="flex flex-col justify-center sm:flex-row sm:justify-start sm:gap-5"
+    >
+      <Profile />
+    </section>
+    <hr class="border-dashed border-1" />
     <section class="flex flex-col">
-      <ArticuleHeader name="Experiencia">
-        <ExpirenceIcon className="size-9 fill-white"/>
-      </ArticuleHeader>
-      {experience.map(({ title, company, date_end, date_start, description }) => (
-      <article class="flex flex-col gap-5">
-        <div class="flex flex-col gap-1">
-          <h2 class="text-lg text-slate-700 dark:text-slate-200 font-semibold">{title}<span class="mx-2">&#x2022</span>{company}</h2>
-          <p class="text-sm text-slate-400 dark:text-slate-400">{date_start} - {date_end}</p>
-        </div>  
-        <ul class="leading-7 list-disc text-base list-inside text-slate-500 dark:text-gray-300">
-          {description.map((item) => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      </article>
-      ))}
+      <SectionHeader name="Experiencia">
+        <ExpirenceIcon className="size-9" />
+      </SectionHeader>
+      {
+        experience.map((experience) => (
+          <ExperienceArticule experience={experience} />
+        ))
+      }
     </section>
     <section class="">
-    <ArticuleHeader name="Proyectos">
-      <ProjectIcon className="size-9"/>
-    </ArticuleHeader>
-    <div class="grid gap-10">
-    {projects.map(({ title, description, image, deploy, code }) => (
-      <article class="grid md:grid-cols-2 gap-4 sm:gap-7 group">
-        <a href={deploy} class="bg-slate-600 rounded-xl relative overflow-hidden block aspect-[5/3]">
-          <img 
-          class="rounded-xl object-left-top
-          absolute right-0 top-0 left-0 bottom-0 box-content w-full h-full object-contain
-          transition-all translate-x-9 translate-y-9 group-hover:translate-x-6 group-hover:translate-y-6 duration-500 ease-in-out
-           z-10"
-          src={image} alt={title}>
-        </a>
-        <div class="flex flex-col gap-2.5 justify-center">
-          <h3 class="font-bold text-3xl text-slate-800 dark:text-white">{title}</h2>
-          <p class="text-slate-600 dark:text-slate-300 text-lg">{description}</p>
-          <div class="flex gap-2 items-center mb-1">
-            <FileIcon/>
-            <FileIcon/>
-            <FileIcon/>
-            <FileIcon/>
-          </div>
-          <div class="flex justify-start gap-3">
-            { deploy && <a href={deploy} class="flex gap-3 group/live hover:gap-6 transition-[gap] items-center text-lg py-2 px-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-lg">
-              Deploy
-              <FileIcon class="text-2xl group-hover/live:rotate-45 transition-transform"/>
-            </a>
+      <SectionHeader name="Proyectos">
+        <ProjectIcon className="size-9" />
+      </SectionHeader>
+      <div class="flex flex-col gap-10">
+        <div class="grid gap-10">
+          {projects.map((project) => <ProjectCard project={project} />)}
+        </div>
+        <div class="grid md:grid-cols-2 gap-2 sm:gap-5">
+          {
+            otherProjects.map((project) => (
+              <OtherProjectCard project={project} />
+            ))
           }
-            <a href={code} class="text-lg px-4 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-lg">
-              Ver código
-              </a>
-          </div>
         </div>
-      </article>
-      ))}
       </div>
-      <div class="grid md:grid-cols-2 gap-4 sm:gap-7">
-        </div>
     </section>
-	</main>
+  </main>
 </Layout>
