@@ -19,9 +19,7 @@ export const presentation: Presentation = {
   description: "Backend / Full Stack Developer",
   subtitule: "Backend / Full Stack Developer",
   openToWork: true,
-  //profile: "/profile.webp",
-  //description:
-  //"Backend / Full Stack developer y estudiante de Programación. Actualmente, trabajando con Spring Boot con Java y React con JavaScript, aprendiendo TypeScript.",
+  profile: "/profile.webp",
   socials: [
     {
       label: "LikedIn",
