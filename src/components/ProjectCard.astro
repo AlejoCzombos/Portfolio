@@ -1,7 +1,8 @@
 ---
-import type { Project } from "@data/projects.ts";
+import { TechIcons, type Project } from "@data/projects.ts";
 import LinkIcon from "@icons/LinkIcon.astro";
 import { Icon } from "astro-icon/components";
+import Tooltip from "./Tooltip.astro";
 
 interface Props {
   project: Project;
@@ -29,17 +30,30 @@ const { title, description, image, deploy, code, techs } = project;
     <h3 class="font-bold text-3xl text-slate-800 dark:text-white">{title}</h3>
     <p class="text-slate-600 dark:text-slate-300 text-lg">{description}</p>
     <div class="flex gap-2 items-center mb-1">
-      {techs.map((tech) => <Icon name=`tech/${tech}` class="size-8" />)}
+      {
+        techs.map((tech) => (
+          <Tooltip
+            text={
+              //Map the enum value to the key
+              Object.keys(TechIcons)[
+                Object.values(TechIcons).indexOf(`${tech}`)
+              ]
+            }
+          >
+            <Icon name={`tech/${tech}`} class="size-8" />
+          </Tooltip>
+        ))
+      }
     </div>
     <div class="flex justify-start gap-3">
       {
         deploy && (
           <a
             href={deploy}
-            class="flex gap-3 group/live hover:gap-6 transition-[gap] items-center text-lg py-2 px-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-lg"
+            class="flex gap-2 group/live hover:gap-6 transition-[gap] items-center text-lg py-2 px-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-lg"
           >
             Deploy
-            <LinkIcon className="text-2xl group-hover/live:rotate-45 transition-transform" />
+            <LinkIcon className="-rotate-90 size-8 group-hover/live:-rotate-45 transition-transform" />
           </a>
         )
       }
