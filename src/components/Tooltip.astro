@@ -1,0 +1,26 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<div class="relative flex group/tooltip">
+  <slot />
+  <span
+    class="flex justify-center group-hover/tooltip:opacity-100 transition-opacity bg-gray-800 dark:bg-white px-1 text-xs dark:text-slate-700 text-gray-100 rounded-md absolute left-1/2 -top-14
+  -translate-x-1/2 translate-y-full opacity-0 p-1 mx-auto text-center"
+  >
+    {text}
+    <svg
+      class="absolute text-gray-800 dark:text-white h-2 w-full left-0 top-full"
+      x="0px"
+      y="0px"
+      viewBox="0 0 255 255"
+      xml:space="preserve"
+      ><polygon class="fill-current" points="0,0 127.5,127.5 255,0"
+      ></polygon></svg
+    >
+  </span>
+</div>
