@@ -10,9 +10,11 @@ import Profile from "@components/Profile.astro";
 import ExperienceArticule from "@components/ExperienceArticule.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 import OtherProjectCard from "@components/OtherProjectCard.astro";
+import Contact from "@components/Contact.astro";
 
 import ExpirenceIcon from "@icons/ExpirenceIcon.astro";
 import ProjectIcon from "@icons/ProjectIcon.astro";
+import ContactIcon from "@icons/ContactIcon.astro";
 ---
 
 <Layout
@@ -37,7 +39,7 @@ import ProjectIcon from "@icons/ProjectIcon.astro";
         ))
       }
     </section>
-    <section class="">
+    <section>
       <SectionHeader name="Proyectos">
         <ProjectIcon className="size-9" />
       </SectionHeader>
@@ -53,6 +55,12 @@ import ProjectIcon from "@icons/ProjectIcon.astro";
           }
         </div>
       </div>
+    </section>
+    <section>
+      <SectionHeader name="Contacto">
+        <ContactIcon className="size-9" />
+      </SectionHeader>
+      <Contact />
     </section>
   </main>
 </Layout>
