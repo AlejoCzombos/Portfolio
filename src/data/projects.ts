@@ -1,4 +1,26 @@
-import { TechIcons } from './tech.ts';
+export enum TechIcons {
+    Spring= <any>"spring",
+  React = <any>"react",
+  CSharp = <any>"csharp",
+  Godot = <any>"godot",
+  Java = <any>"java",
+  JWT = <any>"jwt",
+  Hibernate = <any>"hibernate",
+  JUnit = <any>"junit",
+  MongoDB = <any>"mongodb",
+  MySQL = <any>"mysql",
+  PostgreSQL = <any>"postgresql",
+  SQL_Server = <any>"sql_server",
+  TypeScript = <any>"typescript",
+  JavaScript = <any>"javascript",
+  Docker = <any>"docker",
+  Django = <any>"django",
+  Python = <any>"python",
+  Git = <any>"git",
+  Swagger = <any>"swagger",
+  TailwindCSS = <any>"tailwindcss",
+  Unity = <any>"unity",
+}
 
 export type Project = {
   title: string;
