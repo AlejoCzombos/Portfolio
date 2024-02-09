@@ -1,0 +1,40 @@
+---
+import { presentation } from "@data/presentation.ts";
+import SendIcon from "@icons/SendIcon.astro";
+import CopyIcon from "@icons/CopyIcon.astro";
+import Tooltip from "@components/Tooltip.astro";
+---
+
+<div class="flex gap-2">
+  <input
+    class="px-3 py-1 bg-slate-700 border-2 border-slate-500 rounded-md w-full"
+    type="text"
+    readonly
+    value=`${presentation.mail}`
+  />
+  <Tooltip text="Enviame un mail">
+    <a
+      href=`mailto:${presentation.mail}`
+      class="p-2 bg-slate-700 text-white rounded-md"
+    >
+      <SendIcon className="size-7" />
+    </a>
+  </Tooltip>
+  <Tooltip text="Copiar correo">
+    <button
+      class="p-2 bg-slate-700 text-white rounded-md hover:bg-slate-600"
+      id="copyButton"
+    >
+      <CopyIcon className="size-7" />
+    </button>
+  </Tooltip>
+</div>
+
+<script>
+  import { presentation } from "@data/presentation.ts";
+
+  const copyButton = document.getElementById("copyButton");
+  copyButton?.addEventListener("click", () => {
+    navigator.clipboard.writeText(presentation.mail);
+  });
+</script>
