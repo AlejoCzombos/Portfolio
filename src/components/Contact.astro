@@ -6,23 +6,25 @@ import Tooltip from "@components/Tooltip.astro";
 ---
 
 <div class="flex gap-2">
-  <input
-    class="px-3 py-1 bg-slate-700 border-2 border-slate-500 rounded-md w-full"
-    type="text"
-    readonly
-    value=`${presentation.mail}`
-  />
-  <Tooltip text="Enviame un mail">
+  <p
+    class="flex items-center px-3 py-1 text-slate-600 dark:text-slate-300 bg-sky-400/5 dark:bg-slate-700 border-2 border-none dark:border-slate-500 rounded-md w-full cursor-text overflow-hidden"
+  >
+    {presentation.mail}
+  </p>
+  <Tooltip text="Enviame un correo" w="w-[5rem]" h="-top-[5.5rem]">
     <a
+      aria-label="Enviar correo"
       href=`mailto:${presentation.mail}`
-      class="p-2 bg-slate-700 text-white rounded-md"
+      class="p-2 text-white rounded-md bg-sky-600/25 dark:bg-slate-700 dark:hover:bg-slate-600"
     >
+      <title>Enviar correo</title>
       <SendIcon className="size-7" />
     </a>
   </Tooltip>
-  <Tooltip text="Copiar correo">
+  <Tooltip text="Copiar correo" w="w-[5.5rem]">
     <button
-      class="p-2 bg-slate-700 text-white rounded-md hover:bg-slate-600"
+      aria-label="Copiar correo"
+      class="p-2 text-white rounded-md bg-sky-600/25 dark:bg-slate-700 dark:hover:bg-slate-600"
       id="copyButton"
     >
       <CopyIcon className="size-7" />

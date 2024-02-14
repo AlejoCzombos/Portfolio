@@ -1,7 +1,7 @@
 ---
 import type { Experience } from "@data/experience";
 
-interface ExperienceProps {
+interface Props {
   experience: Experience;
 }
 
@@ -19,7 +19,7 @@ const { title, company, date_start, date_end, description } = experience;
     </p>
   </div>
   <ul
-    class="leading-7 list-disc text-base list-inside text-slate-500 dark:text-gray-300"
+    class="leading-7 list-disc text-base font-medium list-inside text-slate-600 dark:text-gray-300"
   >
     {description.map((item: string) => <li>{item}</li>)}
   </ul>

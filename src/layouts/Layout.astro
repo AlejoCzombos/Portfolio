@@ -1,8 +1,8 @@
 ---
-import '@fontsource-variable/plus-jakarta-sans';
+import "@fontsource-variable/plus-jakarta-sans";
 interface Props {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
 }
 
 const { title, description } = Astro.props;
@@ -10,23 +10,35 @@ const { title, description } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
-		<title>{title}</title>
-	</head>
-	<body class=" bg-slate-100 dark:bg-gray-800 bg-opacity-25">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-slate-100 dark:bg-gray-800/95">
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root{
-		color-scheme: dark light;
-	}
-	html{
-		font-family: 'Plus Jakarta Sans Variable', sans-serif, system-ui, -apple-system, Roboto, Oxygen, Ubuntu, Cantarell;
-	}
+  :root {
+    color-scheme: dark light;
+  }
+  :global(.dark) {
+    color-scheme: dark;
+  }
+
+  html {
+    font-family:
+      "Plus Jakarta Sans Variable",
+      sans-serif,
+      system-ui,
+      -apple-system,
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell;
+  }
 </style>
