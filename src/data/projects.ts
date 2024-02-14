@@ -1,5 +1,5 @@
 export enum TechIcons {
-    Spring= <any>"spring",
+  Spring= <any>"spring",
   React = <any>"react",
   CSharp = <any>"csharp",
   Godot = <any>"godot",
