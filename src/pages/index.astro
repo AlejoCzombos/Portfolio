@@ -5,15 +5,18 @@ import { experience } from "@data/experience.ts";
 import { projects } from "@data/projects.ts";
 import { otherProjects } from "@data/projects.ts";
 
+import ThemeIcon from "@components/ThemeIcon.astro";
 import SectionHeader from "@components/SectionHeader.astro";
 import Profile from "@components/Profile.astro";
 import ExperienceArticule from "@components/ExperienceArticule.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 import OtherProjectCard from "@components/OtherProjectCard.astro";
+import Techs from "@components/Techs.astro";
 import Contact from "@components/Contact.astro";
 
 import ExpirenceIcon from "@icons/ExpirenceIcon.astro";
 import ProjectIcon from "@icons/ProjectIcon.astro";
+import TechsIcon from "@icons/TechsIcon.astro";
 import ContactIcon from "@icons/ContactIcon.astro";
 ---
 
@@ -23,8 +26,9 @@ import ContactIcon from "@icons/ContactIcon.astro";
 >
   <header class="mx-auto max-w-3xl sticky top-0 z-10 h-16"></header>
   <main class="flex flex-col gap-16 sm:max-w-3xl m-auto p-5 container">
+    <ThemeIcon />
     <section
-      class="flex flex-col justify-center sm:flex-row sm:justify-start sm:gap-5"
+      class="flex flex-col justify-center sm:flex-row sm:justify-start gap-7 sm:gap-5"
     >
       <Profile />
     </section>
@@ -55,6 +59,12 @@ import ContactIcon from "@icons/ContactIcon.astro";
           }
         </div>
       </div>
+    </section>
+    <section>
+      <SectionHeader name="Tecnologías">
+        <TechsIcon className="size-9" />
+      </SectionHeader>
+      <Techs />
     </section>
     <section>
       <SectionHeader name="Contacto">
