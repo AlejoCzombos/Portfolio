@@ -8,7 +8,7 @@ import { otherProjects } from "@data/projects.ts";
 import ThemeIcon from "@components/ThemeIcon.astro";
 import SectionHeader from "@components/SectionHeader.astro";
 import Profile from "@components/Profile.astro";
-import ExperienceArticule from "@components/ExperienceArticule.astro";
+import Experience from "@components/Experience.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 import OtherProjectCard from "@components/OtherProjectCard.astro";
 import Techs from "@components/Techs.astro";
@@ -24,11 +24,14 @@ import ContactIcon from "@icons/ContactIcon.astro";
   title="Portfolio de Alejo Czombos - Desarrollador Backend / Full Stack"
   description="Desarrollador Backend / Full Stack con experiencia en Spring Boot, Java, MySQL, PostgreSQL y React"
 >
-  <header class="mx-auto max-w-3xl sticky top-0 z-10 h-16"></header>
-  <main class="flex flex-col gap-16 sm:max-w-3xl m-auto p-5 container">
+  <header
+    class="mx-auto max-w-3xl sticky top-0 z-20 h-16 flex justify-end items-center p-6 bg-white dark:bg-gray-800 bg-opacity-80 dark:bg-opacity-80 backdrop-blur-lg"
+  >
     <ThemeIcon />
+  </header>
+  <main class="flex flex-col gap-16 sm:max-w-3xl m-auto p-5">
     <section
-      class="flex flex-col justify-center sm:flex-row sm:justify-start gap-7 sm:gap-5"
+      class="flex flex-col justify-center sm:flex-row sm:justify-start gap-2 sm:gap-5"
     >
       <Profile />
     </section>
@@ -37,11 +40,7 @@ import ContactIcon from "@icons/ContactIcon.astro";
       <SectionHeader name="Experiencia">
         <ExpirenceIcon className="size-9" />
       </SectionHeader>
-      {
-        experience.map((experience) => (
-          <ExperienceArticule experience={experience} />
-        ))
-      }
+      {experience.map((experience) => <Experience experience={experience} />)}
     </section>
     <section>
       <SectionHeader name="Proyectos">
@@ -65,6 +64,12 @@ import ContactIcon from "@icons/ContactIcon.astro";
         <TechsIcon className="size-9" />
       </SectionHeader>
       <Techs />
+    </section>
+    <section>
+      <SectionHeader name="Redes">
+        <ContactIcon className="size-9" />
+      </SectionHeader>
+      <Contact />
     </section>
     <section>
       <SectionHeader name="Contacto">
