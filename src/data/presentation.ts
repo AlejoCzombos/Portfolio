@@ -1,12 +1,11 @@
 export type Social = {
-  label: string;
+  name: string;
   link: string;
 };
 
 export type Presentation = {
   mail: string;
   title: string;
-  subtitule: string;
   description: string;
   socials: Social[];
   profile?: string;
@@ -17,16 +16,15 @@ export const presentation: Presentation = {
   mail: "alejoczombos@gmail.com",
   title: "Alejo Czombos",
   description: "Backend / Full Stack Developer",
-  subtitule: "Backend / Full Stack Developer",
   openToWork: true,
-  profile: "/profile.webp",
+  profile: "profile.webp",
   socials: [
     {
-      label: "LikedIn",
+      name: "LinkedIn",
       link: "https://www.linkedin.com/in/alejoczombos/",
     },
     {
-      label: "Github",
+      name: "Github",
       link: "https://github.com/Alejoczombos",
     },
   ],

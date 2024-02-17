@@ -1,25 +1,25 @@
 export enum TechIcons {
-  Spring= <any>"spring",
-  React = <any>"react",
-  CSharp = <any>"csharp",
-  Godot = <any>"godot",
-  Java = <any>"java",
-  JWT = <any>"jwt",
-  Hibernate = <any>"hibernate",
-  JUnit = <any>"junit",
-  MongoDB = <any>"mongodb",
-  MySQL = <any>"mysql",
-  PostgreSQL = <any>"postgresql",
-  SQL_Server = <any>"sql_server",
-  TypeScript = <any>"typescript",
-  JavaScript = <any>"javascript",
-  Docker = <any>"docker",
-  Django = <any>"django",
-  Python = <any>"python",
-  Git = <any>"git",
-  Swagger = <any>"swagger",
-  TailwindCSS = <any>"tailwindcss",
-  Unity = <any>"unity",
+  Spring= "spring",
+  React = "react",
+  CSharp ="csharp",
+  Godot = "godot",
+  Java = "java",
+  JWT = "jwt",
+  Hibernate ="hibernate",
+  JUnit = "junit",
+  MongoDB = "mongodb",
+  MySQL = "mysql",
+  PostgreSQL = "postgresql",
+  SQLServer = "sqlserver",
+  TypeScript = "typescript",
+  JavaScript = "javascript",
+  Docker = "docker",
+  Django = "django",
+  Python = "python",
+  Git = "git",
+  Swagger = "swagger",
+  TailwindCSS = "tailwindcss",
+  Unity = "unity",
 }
 
 export type Project = {
@@ -36,34 +36,40 @@ export const projects: Project[] = [
   {
     title: "Task Manager",
     description:
-      "Aplicación web para la gestión de tareas, con autenticación basada en JWT",
+      "Aplicación web para la gestión de tareas, con autenticación basada en JWT y Base de Datos",
     image: "task-manager.webp",
-    techs: [TechIcons.Spring, TechIcons.React, TechIcons.JWT, TechIcons.PostgreSQL],
+    techs: [TechIcons.Spring, TechIcons.Java , TechIcons.React, TechIcons.JWT, TechIcons.PostgreSQL],
     code: "https://github.com/alejoczombos/TaskManager",
-    deploy: "https://task-manager-alejoczombos.herokuapp.com/",
-  },
-  {
-    title: "Educar para Transformar",
-    description: "Sistema integral de gestión de escuelas.",
-    techs: [TechIcons.Spring, TechIcons.Godot, TechIcons.MySQL],
-    code: "/",
+    deploy: "https://taskmanager-u3h3.onrender.com",
   },
 ];
 
 export const otherProjects: Project[] = [
   {
-    title: "LUDO Game",
-    description:
-      "Juego de mesa recreado en C# con Windows Forms. Permite jugar de a 4 jugadores, con la posibilidad de elegir el color de cada uno.",
-    techs: [TechIcons.CSharp],
-    code: "https://github.com/AlejoCzombos/TPI_LUDO",
+    title: "Educar para transformar",
+    description: "Backend del Sistema de Gestión Escolar",
+    code: "https://github.com/AlejoCzombos/EducarParaTransdormar_Backend",
+    techs: [TechIcons.Spring, TechIcons.Java, TechIcons.Hibernate, TechIcons.MySQL],
+  },
+  {
+    title: "Viaja Plus",
+    description: "Reserva de pasajes con Base de Datos",
+    code: "https://github.com/joseialegre/ViajaPlus",
+    techs: [TechIcons.Django, TechIcons.Python, TechIcons.MySQL],
   },
   {
     title: "Wizard Crawler",
     description:
-      "Juego de oleadas de enemigos en el que el jugador debe sobrevivir el mayor tiempo posible. Creado en Godot Engine con GdScript.",
+      "Videojuego de supervivencia de oleadas",
     techs: [TechIcons.Godot],
-    code: "/",
+    code: "https://github.com/AlejoCzombos/Wizard_Crawler",
     deploy: "https://alehoid.itch.io/wizard-crawler",
+  },
+  {
+    title: "LUDO Game",
+    description:
+      "Recreación del juego de mesa Ludo",
+    techs: [TechIcons.CSharp],
+    code: "https://github.com/AlejoCzombos/TPI_LUDO",
   },
 ];
