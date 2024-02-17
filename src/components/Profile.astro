@@ -8,7 +8,7 @@ const { title, description, profile, openToWork } = presentation;
 
 <img
   class="m-auto sm:m-0 size-44 rounded-full shadow-lg border-[8px] dark:border-gray-900/80 border-slate-200/80"
-  src="https://media.licdn.com/dms/image/D4D03AQEuOTiDvAdeMw/profile-displayphoto-shrink_200_200/0/1706145053286?e=1712188800&v=beta&t=RXp9LK6fysGI_rHvTeAcbvnleBkE0eu_2Ntl4-waK88"
+  src={profile}
   alt="Foto de perfil de Alejo Czombos"
 />
 <div
@@ -25,7 +25,8 @@ const { title, description, profile, openToWork } = presentation;
   <div class="flex justify-center gap-2 mt-0.5">
     {openToWork && <CoffeeIcon className="size-6" />}
     <a
-      href="/"
+      href="/Alejo Czombos - Curriculum Vitae.pdf"
+      download
       class="flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl dark:text-slate-200 text-slate-700 dark:bg-sky-400/70 dark:hover:bg-sky-300/65 bg-sky-300 hover:bg-sky-200/90"
     >
       <FileIcon />
