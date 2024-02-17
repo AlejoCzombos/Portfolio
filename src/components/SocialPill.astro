@@ -1,0 +1,22 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  name: string;
+  link?: string;
+  size?: string;
+}
+
+const { name, link, size } = Astro.props;
+---
+
+<a
+  href={link}
+  class=`flex gap-3 justify-center items-center px-6 py-5 border-2 font-bold rounded-xl 
+  border-2 dark:border-slate-700 shadow border-slate-200 dark:hover:border-slate-600 hover:border-slate-300
+  hover:shadow transition-all duration-200 ease-in-out hover:-translate-y-1`
+  title=`Link to ${name}`
+>
+  <Icon name={`tech/${name.toLowerCase()}`} class=`size-${size}` />
+  <p class="text-slate-600 dark:text-slate-300 font-medium">{name}</p>
+</a>

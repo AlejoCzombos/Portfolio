@@ -1,0 +1,14 @@
+---
+import { presentation } from "@data/presentation";
+import SocialPill from "@components/SocialPill.astro";
+
+const { socials } = presentation;
+---
+
+<div class="flex flex-wrap gap-4">
+  {
+    socials.map((social) => (
+      <SocialPill name={social.name} link={social.link} size="6" />
+    ))
+  }
+</div>
