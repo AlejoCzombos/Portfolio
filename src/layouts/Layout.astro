@@ -1,5 +1,7 @@
 ---
 import "@fontsource-variable/plus-jakarta-sans";
+import AstroIcon from "@icons/AstroIcon.astro";
+
 interface Props {
   title: string;
   description: string;
@@ -23,8 +25,11 @@ const { title, description } = Astro.props;
     <footer
       class="h-10 flex flex-col justify-center items-center mt-5 text-slate-600 dark:text-slate-300"
     >
-      <p>Hecho con ❤️ por Alejo Czombos</p>
-      <p>
+      <div class="flex">
+        <a href="https://github.com/AlejoCzombos/Portfolio">Hecho con</a>
+        <AstroIcon />
+      </div>
+      <p class="text-sm">
         Diseño de <a
           href="https://www.linkedin.com/in/eduardo-robles-9b0807205/"
           >Eduardo Rl</a
