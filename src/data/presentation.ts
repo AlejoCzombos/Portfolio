@@ -15,7 +15,7 @@ export type Presentation = {
 export const presentation: Presentation = {
   mail: "alejoczombos@gmail.com",
   title: "Alejo Czombos",
-  description: "Backend / Full Stack Developer",
+  description: "Apasionado Desarrollador Web Backend en búsqueda de desafíos",
   openToWork: true,
   profile: "profile.webp",
   socials: [
