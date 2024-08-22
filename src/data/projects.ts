@@ -1,5 +1,5 @@
 export enum TechIcons {
-  Spring= <any>"spring",
+  Spring = <any>"spring",
   React = <any>"react",
   CSharp = <any>"csharp",
   Godot = <any>"godot",
@@ -38,13 +38,19 @@ export const projects: Project[] = [
     description:
       "Aplicación web para la gestión de tareas, con autenticación basada en JWT y Base de Datos",
     image: "task-manager.webp",
-    techs: [TechIcons.Spring, TechIcons.Java , TechIcons.React, TechIcons.JWT, TechIcons.PostgreSQL],
+    techs: [TechIcons.Spring, TechIcons.Java, TechIcons.React, TechIcons.JWT, TechIcons.PostgreSQL],
     code: "https://github.com/alejoczombos/TaskManager",
     deploy: "https://taskmanager-u3h3.onrender.com",
   },
 ];
 
 export const otherProjects: Project[] = [
+  {
+    title: "Tiny URL",
+    description: "Acortador de URLs con Base de Datos",
+    code: "https://github.com/AlejoCzombos/TinyURL",
+    techs: [TechIcons.Spring, TechIcons.Java, TechIcons.MongoDB, TechIcons.Swagger],
+  },
   {
     title: "Educar para transformar",
     description: "Backend del Sistema de Gestión Escolar",
@@ -56,20 +62,5 @@ export const otherProjects: Project[] = [
     description: "Reserva de pasajes con Base de Datos",
     code: "https://github.com/joseialegre/ViajaPlus",
     techs: [TechIcons.Django, TechIcons.Python, TechIcons.MySQL],
-  },
-  {
-    title: "Wizard Crawler",
-    description:
-      "Videojuego de supervivencia de oleadas",
-    techs: [TechIcons.Godot],
-    code: "https://github.com/AlejoCzombos/Wizard_Crawler",
-    deploy: "https://alehoid.itch.io/wizard-crawler",
-  },
-  {
-    title: "LUDO Game",
-    description:
-      "Recreación del juego de mesa Ludo",
-    techs: [TechIcons.CSharp],
-    code: "https://github.com/AlejoCzombos/TPI_LUDO",
   },
 ];
