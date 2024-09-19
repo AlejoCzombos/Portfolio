@@ -12,7 +12,9 @@ const { project } = Astro.props;
 const { title, description, deploy, code, techs } = project;
 ---
 
-<a href={deploy ? deploy : code}>
+<a href={deploy ? deploy : code}
+target="_blank"
+>
   <article
     class="border-2 border-slate-200 dark:border-slate-600 rounded-lg p-5 group relative
             hover:border-slate-300 dark:hover:border-slate-400 hover:shadow transition-all duration-200 ease-in-out hover:-translate-y-1"

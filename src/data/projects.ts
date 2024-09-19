@@ -34,23 +34,38 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Tiny URL",
+    description: "Acortador de URLs con Base de Datos",
+    image: "tiny-url.webp",
+    techs: [
+      TechIcons.Spring,
+      TechIcons.Java,
+      TechIcons.MongoDB,
+      TechIcons.JUnit,
+      TechIcons.Swagger,
+    ],
+    deploy: "https://tinyurl.alejoczombos.com.ar",
+    code: "https://github.com/AlejoCzombos/TinyURL",
+  },
+  {
     title: "Task Manager",
     description:
       "Aplicación web para la gestión de tareas, con autenticación basada en JWT y Base de Datos",
     image: "task-manager.webp",
-    techs: [TechIcons.Spring, TechIcons.Java, TechIcons.React, TechIcons.JWT, TechIcons.PostgreSQL],
+    techs: [
+      TechIcons.Spring,
+      TechIcons.Java,
+      TechIcons.PostgreSQL,
+      TechIcons.JWT,
+      TechIcons.JUnit,
+      TechIcons.Swagger,
+    ],
     code: "https://github.com/alejoczombos/TaskManager",
     deploy: "https://taskmanager-u3h3.onrender.com",
   },
 ];
 
 export const otherProjects: Project[] = [
-  {
-    title: "Tiny URL",
-    description: "Acortador de URLs con Base de Datos",
-    code: "https://github.com/AlejoCzombos/TinyURL",
-    techs: [TechIcons.Spring, TechIcons.Java, TechIcons.MongoDB, TechIcons.Swagger],
-  },
   {
     title: "Educar para transformar",
     description: "Backend del Sistema de Gestión Escolar",
