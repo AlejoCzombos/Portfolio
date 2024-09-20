@@ -10,5 +10,5 @@ export const techs: TechIcons[] = [
   TechIcons.Docker,
   TechIcons.Swagger,
   TechIcons.JUnit,
-  TechIcons.JWT,
+  TechIcons.Jenkins,
 ];

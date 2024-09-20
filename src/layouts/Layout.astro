@@ -1,4 +1,7 @@
 ---
+import Footer from "@components/Sections/Footer.astro";
+import Header from "@components/Sections/Header.astro";
+import ThemeIcon from "@components/ThemeIcon.astro";
 import "@fontsource-variable/plus-jakarta-sans";
 import AstroIcon from "@icons/AstroIcon.astro";
 
@@ -21,21 +24,9 @@ const { title, description } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-white dark:bg-gray-800">
+    <Header />
     <slot />
-    <footer
-      class="h-10 flex flex-col justify-center items-center mt-5 mb-4 text-slate-600 dark:text-slate-300"
-    >
-      <div class="flex">
-        <a href="https://github.com/AlejoCzombos/Portfolio">Hecho con</a>
-        <AstroIcon />
-      </div>
-      <p class="text-sm">
-        Diseño de <a
-          href="https://www.linkedin.com/in/eduardo-robles-9b0807205/"
-          >Eduardo Rl</a
-        >
-      </p>
-    </footer>
+    <Footer />
   </body>
 </html>
 <style is:global>

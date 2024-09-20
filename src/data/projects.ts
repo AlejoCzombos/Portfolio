@@ -20,38 +20,36 @@ export enum TechIcons {
   Swagger = <any>"swagger",
   TailwindCSS = <any>"tailwindcss",
   Unity = <any>"unity",
+  Jenkins = <any>"jenkins",
+  Blender = <any>"blender",
 }
 
 export type Project = {
   title: string;
   description: string;
-  image?: string;
   techs: TechIcons[];
-  code: string;
-  deploy?: string;
+  link: string;
   isComingSoon?: boolean;
 };
 
 export const projects: Project[] = [
   {
     title: "Tiny URL",
-    description: "Acortador de URLs con Base de Datos",
-    image: "tiny-url.webp",
+    description: "Acortador de URL con Base de Datos y arquitectura hexagonal",
     techs: [
       TechIcons.Spring,
       TechIcons.Java,
       TechIcons.MongoDB,
       TechIcons.JUnit,
       TechIcons.Swagger,
+      TechIcons.Docker,
+      TechIcons.Jenkins,
     ],
-    deploy: "https://tinyurl.alejoczombos.com.ar",
-    code: "https://github.com/AlejoCzombos/TinyURL",
+    link: "https://github.com/AlejoCzombos/TinyURL",
   },
   {
     title: "Task Manager",
-    description:
-      "Aplicación web para la gestión de tareas, con autenticación basada en JWT y Base de Datos",
-    image: "task-manager.webp",
+    description: "Gestor de tareas con Base de Datos y autenticación JWT",
     techs: [
       TechIcons.Spring,
       TechIcons.Java,
@@ -60,22 +58,18 @@ export const projects: Project[] = [
       TechIcons.JUnit,
       TechIcons.Swagger,
     ],
-    code: "https://github.com/alejoczombos/TaskManager",
-    deploy: "https://taskmanager-u3h3.onrender.com",
+    link: "https://github.com/alejoczombos/TaskManager",
   },
-];
-
-export const otherProjects: Project[] = [
   {
     title: "Educar para transformar",
     description: "Backend del Sistema de Gestión Escolar",
-    code: "https://github.com/AlejoCzombos/EducarParaTransdormar_Backend",
-    techs: [TechIcons.Spring, TechIcons.Java, TechIcons.Hibernate, TechIcons.MySQL],
+    link: "https://github.com/AlejoCzombos/EducarParaTransdormar_Backend",
+    techs: [TechIcons.Spring, TechIcons.Java, TechIcons.Hibernate, TechIcons.MySQL, TechIcons.JWT],
   },
   {
     title: "Viaja Plus",
     description: "Reserva de pasajes con Base de Datos",
-    code: "https://github.com/joseialegre/ViajaPlus",
+    link: "https://github.com/joseialegre/ViajaPlus",
     techs: [TechIcons.Django, TechIcons.Python, TechIcons.MySQL],
   },
 ];

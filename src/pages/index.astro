@@ -1,83 +1,25 @@
 ---
 import Layout from "@layouts/Layout.astro";
 
-import { experience } from "@data/experience.ts";
-import { projects } from "@data/projects.ts";
-import { otherProjects } from "@data/projects.ts";
-
-import ThemeIcon from "@components/ThemeIcon.astro";
-import SectionHeader from "@components/SectionHeader.astro";
-import Profile from "@components/Profile.astro";
-import Experience from "@components/Experience.astro";
-import ProjectCard from "@components/ProjectCard.astro";
-import OtherProjectCard from "@components/OtherProjectCard.astro";
-import Techs from "@components/Techs.astro";
-import Socials from "@components/Socials.astro";
+import Profile from "@components/Sections/Profile.astro";
+import Experience from "@components/Sections/Experience.astro";
+import Techs from "@components/Sections/Techs.astro";
+import Socials from "@components/Sections/Socials.astro";
 import Contact from "@components/Contact.astro";
-
-import ExpirenceIcon from "@icons/ExpirenceIcon.astro";
-import ProjectIcon from "@icons/ProjectIcon.astro";
-import TechsIcon from "@icons/TechsIcon.astro";
-import SocialsIcon from "@icons/SocialsIcon.astro";
-import ContactIcon from "@icons/ContactIcon.astro";
+import Projects from "@components/Sections/Projects.astro";
 ---
 
 <Layout
   title="Portfolio de Alejo Czombos - Desarrollador Backend"
   description="Desarrollador Backend con experiencia en Spring Boot, Java, MySQL, PostgreSQL y React"
 >
-  <header
-    class="mx-auto max-w-3xl sticky top-0 z-20 h-16 flex justify-end items-center p-6 bg-white dark:bg-gray-800 bg-opacity-80 dark:bg-opacity-80 backdrop-blur-lg"
-  >
-    <ThemeIcon />
-  </header>
   <main class="flex flex-col gap-16 sm:max-w-3xl m-auto p-5">
-    <section
-      class="flex flex-col justify-center sm:flex-row sm:justify-start gap-2 sm:gap-5"
-    >
-      <Profile />
-    </section>
+    <Profile />
     <hr class="border-dashed border-1" />
-    <section class="flex flex-col">
-      <SectionHeader name="Experiencia">
-        <ExpirenceIcon className="size-9" />
-      </SectionHeader>
-      {experience.map((experience) => <Experience experience={experience} />)}
-    </section>
-    <section>
-      <SectionHeader name="Proyectos">
-        <ProjectIcon className="size-9" />
-      </SectionHeader>
-      <div class="flex flex-col gap-10">
-        <div class="grid gap-10">
-          {projects.map((project) => <ProjectCard project={project} />)}
-        </div>
-        <div class="grid md:grid-cols-2 gap-2 sm:gap-5">
-          {
-            otherProjects.map((project) => (
-              <OtherProjectCard project={project} />
-            ))
-          }
-        </div>
-      </div>
-    </section>
-    <section>
-      <SectionHeader name="Tecnologías">
-        <TechsIcon className="size-9" />
-      </SectionHeader>
-      <Techs />
-    </section>
-    <section>
-      <SectionHeader name="Redes">
-        <SocialsIcon className="size-9" />
-      </SectionHeader>
-      <Socials />
-    </section>
-    <section>
-      <SectionHeader name="Contacto">
-        <ContactIcon className="size-9" />
-      </SectionHeader>
-      <Contact />
-    </section>
+    <Experience />
+    <Projects />
+    <Techs />
+    <Socials />
+    <Contact />
   </main>
 </Layout>

@@ -1,0 +1,13 @@
+---
+import ExperienceCard from "@components/ExperienceCard.astro";
+import SectionHeader from "@components/SectionHeader.astro";
+import ExpirenceIcon from "@icons/ExpirenceIcon.astro";
+import { experience } from "@data/experience.ts";
+---
+
+<section class="flex flex-col">
+    <SectionHeader name="Experiencia">
+      <ExpirenceIcon className="size-9" />
+    </SectionHeader>
+    {experience.map((experience) => <ExperienceCard experience={experience} />)}
+</section>

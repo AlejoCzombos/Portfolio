@@ -1,0 +1,20 @@
+---
+import { presentation } from "@data/presentation";
+import SocialPill from "@components/SocialPill.astro";
+import SectionHeader from "../SectionHeader.astro";
+import SocialsIcon from "@icons/SocialsIcon.astro";
+
+const { socials } = presentation;
+---
+<section>
+  <SectionHeader name="Redes">
+    <SocialsIcon className="size-9" />
+  </SectionHeader>
+  <div class="flex flex-wrap gap-4">
+    {
+      socials.map((social) => (
+        <SocialPill name={social.name} link={social.link} size="6" />
+      ))
+    }
+  </div>
+</section>
