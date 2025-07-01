@@ -16,6 +16,7 @@
     "astro": "^4.3.0",
     "astro-font": "^0.0.77",
     "astro-icon": "^1.1.0",
+    "caniuse-lite": "^1.0.30001726",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   }

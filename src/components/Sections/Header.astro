@@ -3,7 +3,54 @@ import ThemeIcon from "@components/ThemeIcon.astro";
 ---
 
 <header
-    class="mx-auto max-w-3xl sticky top-0 z-20 h-16 flex justify-end items-center p-6 bg-white dark:bg-gray-800 bg-opacity-80 dark:bg-opacity-80 backdrop-blur-lg"
+    class="mx-auto max-w-3xl sticky top-0 z-20 h-16 flex justify-between items-center px-6 py-10 bg-white dark:bg-gray-800 bg-opacity-80 dark:bg-opacity-80 backdrop-blur-lg"
   >
+    <div class="flex items-center gap-2 opacity-0 profile-container">
+      <img
+        class="size-12 rounded-full shadow-lg border-4 dark:border-gray-900/80 border-slate-200/80"
+        src="/profile.webp"
+        alt="Foto de perfil de Alejo Czombos"
+      />
+      <span class="text-slate-600 dark:text-slate-100 text-lg font-semibold">
+        Alejo Czombos
+      </span>
+    </div>
     <ThemeIcon />
 </header>
+
+<script>
+  let showHeader = false;
+
+  const handleScroll = () => {
+    const profile = document.querySelector(".profile-container");
+    showHeader = window.scrollY > 250;
+    if (!profile) return;
+    if (showHeader) {
+      profile.classList.add("profile-visible");
+      profile.classList.remove("profile-hidden");
+    } else {
+      profile.classList.add("profile-hidden");
+      profile.classList.remove("profile-visible");
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  window.addEventListener("beforeunload", () => {
+    window.removeEventListener("scroll", handleScroll);
+  });
+</script>
+
+<style>
+  .profile-hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .profile-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+</style>
