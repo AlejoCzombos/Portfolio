@@ -12,8 +12,8 @@ import TechsIcon from "@icons/TechsIcon.astro";
   <div class="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
     {
       techs.map((tech) => (
-        <div class="flex max-w-xs flex-col items-center space-y-2 rounded-lg border-2 dark:border-slate-700 border-slate-200 p-4 group">
-          <Icon name={`tech/${tech}`} class="size-10 transition-transform ease-in-out group-hover:scale-125" />
+        <div class="flex max-w-xs flex-col items-center space-y-2 rounded-lg border-2 dark:border-slate-700 border-slate-200 p-4 group hover:border-slate-300 dark:hover:border-slate-500  transition-colors ease-in-out">
+          <Icon name={`tech/${tech}`} class="size-10 transition-transform ease-in-out group-hover:scale-110" />
           <p class="text-slate-600 dark:text-slate-300 font-medium">
             {Object.keys(TechIcons)[Object.values(TechIcons).indexOf(`${tech}`)]}
           </p>

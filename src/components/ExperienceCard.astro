@@ -1,5 +1,6 @@
 ---
 import type { Experience } from "@data/experience";
+import TechPill from "./TechPill.astro";
 
 interface Props {
   experience: Experience;
@@ -9,18 +10,29 @@ const { experience } = Astro.props;
 const { title, company, date_start, date_end, description } = experience;
 ---
 
-<article class="flex flex-col gap-5 mb-10">
-  <div class="flex flex-col gap-1">
-    <h2 class="text-lg text-slate-700 dark:text-slate-200 font-semibold">
-      {title}<span class="mx-2">&#x2022</span>{company}
-    </h2>
-    <p class="text-sm text-slate-400 dark:text-slate-400">
+<article class="flex flex-col gap-3 mb-8">
+  <header class="flex items-start justify-between">
+    <div class="flex flex-col">
+      <h2 class="text-lg text-slate-700 dark:text-slate-200 font-semibold">
+        {title}
+      </h2>
+      <p class="text-lg font-semibold text-sky-500">
+        {company}
+      </p>
+    </div>
+    <p class="text-sm pt-1 text-slate-400 dark:text-slate-400">
       {date_start} - {date_end}
     </p>
-  </div>
+  </header>
   <ul
-    class="leading-7 list-disc text-base font-medium list-inside text-slate-600 dark:text-gray-300"
+    class="leading-7 list-disc space-y-1.5 text-base font-medium list-inside text-slate-600 dark:text-gray-300"
   >
     {description.map((item: string) => <li>{item}</li>)}
   </ul>
+  <!-- <div class="flex flex-wrap gap-2">
+    {experience.tecnologies.map((tech) => <TechPill tech={tech}/>)}
+  </div> -->
+  <div class="text-slate-600 dark:text-gray-300 text-base">
+    <strong>Stack:</strong> {experience.tecnologies.join(", ")}
+  </div>
 </article>

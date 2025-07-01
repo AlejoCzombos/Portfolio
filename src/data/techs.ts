@@ -1,14 +1,15 @@
 import { TechIcons } from "@data/projects.ts";
 
 export const techs: TechIcons[] = [
-  TechIcons.Spring,
+  TechIcons.TypeScript,
   TechIcons.Java,
-  TechIcons.Hibernate,
+  TechIcons.Python,
+  TechIcons.NodeJS,
+  TechIcons.Express,
+  TechIcons.Spring,
+  TechIcons.PostgreSQL,
   TechIcons.MySQL,
   TechIcons.MongoDB,
-  TechIcons.Git,
+  //TechIcons.Git,
   TechIcons.Docker,
-  TechIcons.Swagger,
-  TechIcons.JUnit,
-  TechIcons.Jenkins,
 ];
